@@ -1,8 +1,9 @@
 import axios from "axios";
+import { Dispatch } from "redux";
 import { ActionType } from "../action-types/types";
 import { Action } from "../actions";
 
-const searchPckg = (pckg: string) => async (dispatch: any) => {
+export const searchPckg = (pckg: string) => async (dispatch: Dispatch<Action>) => {
   dispatch({
     type: ActionType.SEARCH_PCKG,
   });

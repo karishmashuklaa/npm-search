@@ -7,7 +7,7 @@ interface PckgState {
   data: string[];
 }
 
-const reducer = (
+const pckgReducer = (
   state: PckgState,
   action: Action
 ): PckgState => {
@@ -35,4 +35,4 @@ const reducer = (
   }
 };
 
-export default reducer;
+export default pckgReducer;

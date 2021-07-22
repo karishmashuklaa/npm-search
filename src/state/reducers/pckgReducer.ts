@@ -1,30 +1,11 @@
+import { ActionType } from "../action-types/types";
+import { Action } from "../actions/index";
+
 interface PckgState {
   loading: boolean;
   error: string | null;
   data: string[];
 }
-
-enum ActionType {
-    SEARCH_PCKG = "search_pckg",
-    SEARCH_PCKG_SUCCESS = "search_pckg_success",
-    SEARCH_PCKG_ERROR = "search_pckg_error"
-}
-
-interface SearchPckgAction {
-  type: ActionType.SEARCH_PCKG;
-}
-
-interface SearchPckgSuccessAction {
-  type: ActionType.SEARCH_PCKG_SUCCESS;
-  payload: string[];
-}
-
-interface SearchPckgErrorAction {
-  type: ActionType.SEARCH_PCKG_ERROR;
-  payload: string;
-}
-
-type Action = SearchPckgAction | SearchPckgSuccessAction | SearchPckgErrorAction
 
 const reducer = (
   state: PckgState,

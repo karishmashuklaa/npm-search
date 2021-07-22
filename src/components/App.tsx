@@ -1,10 +1,15 @@
-import React from 'react';
+import { Provider } from "react-redux";
+import { store } from "../state";
+import PckgList from "./PckgList";
 
 function App() {
   return (
-    <div className="App">
-      hi
-    </div>
+    <Provider store={store}>
+      <div>
+        <h1>Search For Any NPM Package</h1>
+        <PckgList />
+      </div>
+    </Provider>
   );
 }
 

@@ -4,7 +4,12 @@ interface PckgState {
     data: string[];
 }
 
-const reducer = (state: PckgState,action: any) => {
+interface Action {
+    type: string;
+    payload?: any; // payload is optional
+}
+
+const reducer = (state: PckgState, action: Action): PckgState => {
     const { type, payload } = action;
     switch(type) {
         case 'search_pckg':

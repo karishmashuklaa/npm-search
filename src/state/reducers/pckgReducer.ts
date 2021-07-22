@@ -4,12 +4,21 @@ interface PckgState {
     data: string[];
 }
 
-interface Action {
-    type: string;
-    payload?: any; // payload is optional
+interface SearchPckgAction {
+    type: 'search_pckg';
 }
 
-const reducer = (state: PckgState, action: Action): PckgState => {
+interface SearchPckgSuccessAction {
+    type: 'search_pckg_success';
+    payload: string[];
+}
+
+interface SearchPckgErrorAction {
+    type: 'search_pckg_error';
+    payload: string;
+}
+
+const reducer = (state: PckgState, action): PckgState => {
     const { type, payload } = action;
     switch(type) {
         case 'search_pckg':

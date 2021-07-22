@@ -7,8 +7,14 @@ interface PckgState {
   data: string[];
 }
 
+const initialState = {
+  loading: false,
+  error: null,
+  data: []
+}
+
 const pckgReducer = (
-  state: PckgState,
+  state: PckgState = initialState,
   action: Action
 ): PckgState => {
   switch (action.type) {

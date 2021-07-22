@@ -1,34 +1,38 @@
+import { ActionType } from "../action-types/types";
+import { Action } from "../actions/index";
+
 interface PckgState {
-    loading: boolean;
-    error: string | null;
-    data: string[];
+  loading: boolean;
+  error: string | null;
+  data: string[];
 }
 
-const reducer = (state: PckgState,action: any) => {
-    const { type, payload } = action;
-    switch(type) {
-        case 'search_pckg':
-            return {
-                loading: true,
-                error: null,
-                data: []
-            };
-        case 'search_pckg_success':
-            return {
-                loading: false,
-                error: null,
-                data: payload
-            };
-        case 'search_pckg_error':
-            return {
-                loading: false,
-                error: payload,
-                data: []
-            };
-        default:
-            return state;
-    }
-
+const reducer = (
+  state: PckgState,
+  action: Action
+): PckgState => {
+  switch (action.type) {
+    case ActionType.SEARCH_PCKG:
+      return {
+        loading: true,
+        error: null,
+        data: [],
+      };
+    case ActionType.SEARCH_PCKG_SUCCESS:
+      return {
+        loading: false,
+        error: null,
+        data: action.payload,
+      };
+    case ActionType.SEARCH_PCKG_ERROR:
+      return {
+        loading: false,
+        error: action.payload,
+        data: [],
+      };
+    default:
+      return state;
+  }
 };
 
 export default reducer;

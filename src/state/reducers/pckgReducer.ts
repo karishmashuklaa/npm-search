@@ -4,38 +4,46 @@ interface PckgState {
   data: string[];
 }
 
+enum ActionType {
+    SEARCH_PCKG = "search_pckg",
+    SEARCH_PCKG_SUCCESS = "search_pckg_success",
+    SEARCH_PCKG_ERROR = "search_pckg_error"
+}
+
 interface SearchPckgAction {
-  type: "search_pckg";
+  type: ActionType.SEARCH_PCKG;
 }
 
 interface SearchPckgSuccessAction {
-  type: "search_pckg_success";
+  type: ActionType.SEARCH_PCKG_SUCCESS;
   payload: string[];
 }
 
 interface SearchPckgErrorAction {
-  type: "search_pckg_error";
+  type: ActionType.SEARCH_PCKG_ERROR;
   payload: string;
 }
 
+type Action = SearchPckgAction | SearchPckgSuccessAction | SearchPckgErrorAction
+
 const reducer = (
   state: PckgState,
-  action: SearchPckgAction | SearchPckgSuccessAction | SearchPckgErrorAction
+  action: Action
 ): PckgState => {
   switch (action.type) {
-    case "search_pckg":
+    case ActionType.SEARCH_PCKG:
       return {
         loading: true,
         error: null,
         data: [],
       };
-    case "search_pckg_success":
+    case ActionType.SEARCH_PCKG_SUCCESS:
       return {
         loading: false,
         error: null,
         data: action.payload,
       };
-    case "search_pckg_error":
+    case ActionType.SEARCH_PCKG_ERROR:
       return {
         loading: false,
         error: action.payload,

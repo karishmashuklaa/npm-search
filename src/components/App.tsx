@@ -6,7 +6,7 @@ function App() {
   return (
     <Provider store={store}>
       <div>
-        <h1>Search For Any NPM Package</h1>
+        <h1 className="text-center mt-5 mb-3">Search For Any NPM Package</h1>
         <PckgList />
       </div>
     </Provider>

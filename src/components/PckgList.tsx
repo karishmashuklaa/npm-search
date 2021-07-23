@@ -1,6 +1,8 @@
+import "../styles/index.css";
 import { useState } from "react";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import { useActions } from "../hooks/useActions";
+
 
 const PckgList: React.FC = () => {
     const [pckg, setPckg] = useState('');
@@ -15,6 +17,7 @@ const PckgList: React.FC = () => {
         <div>
            <form onSubmit={onSubmit}>
                <input 
+               type="text"
                value={pckg} 
                onChange={e => setPckg(e.target.value)} 
                />

@@ -4,13 +4,44 @@ html {
   padding: 0;
 }
 
+:root {
+  --pink: #e24ec2;
+  --black: #000000;
+  --white: #ffffff;
+}
+
 body {
-  background: #ffffff;
-  color: #000000;
+  background: var(--white);
+  color: var(--black);
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   min-width: fit-content;
+}
+
+input[type=text] {
+  margin-right: 0.5rem;
+  border-radius: 8px;
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 2rem;
+}
+
+input[type=text]:focus {
+  outline: none;
+  border: solid 2px var(--pink);
+}
+
+button {
+  background-color: var(--pink);
+  color: var(--white);
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+  border: 2px solid var(--pink);
+  border-radius: 8px;
+}
+
+button:hover {
+  opacity: 0.9;
 }

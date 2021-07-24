@@ -26,7 +26,15 @@ const PckgList: React.FC = () => {
            {error && <h3>{error}</h3>}
            {loading && <h3>Loading...</h3>}
            {!error && !loading && 
-           data.map((name) => <div key={name}>{name}</div>)
+           data.map((name) => 
+           <div key={name} className="row">
+                <div className="column">
+                    <div className="card">
+                       {name}
+                    </div>
+                </div>
+            </div>
+            )
            }
         </div>
     )

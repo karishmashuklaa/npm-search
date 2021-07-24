@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body,
 html {
   margin: 0;
@@ -44,4 +48,45 @@ button {
 
 button:hover {
   opacity: 0.9;
+}
+
+/* CARD */
+
+.column {
+  float: left;
+  width: 40%;
+  padding: 0 10px;
+}
+
+.row {
+  margin: 0 -5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin-bottom: 1rem;
+  border: 1px solid var(--pink);
+  border-radius: 8px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
 }
